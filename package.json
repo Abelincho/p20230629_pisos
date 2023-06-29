@@ -8,7 +8,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.12"
+    "cheerio": "^1.0.0-rc.12",
+    "playwright": "^1.35.1",
+    "playwright-chromium": "^1.35.1"
   },
   "devDependencies": {
     "@playwright/test": "^1.35.1"
