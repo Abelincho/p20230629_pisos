@@ -1,19 +1,15 @@
 //console.log("Superintendente Vicente");
 
-const { chromium } = require('playwright');
+const { firefox } = require('playwright');
 
 (async () => {
-  const browser = await chromium.launch();
-  const context = await browser.newContext({ headless: false });
-  const page = await context.newPage({ devtools: true });
-  page.once('load', () => console.log('Página Cargada! :D'));
-  await page.goto('https://www.idealista.com/venta-viviendas/leon-leon/mapa');
   
-  const selector = '.get-all.sublocations-see-all.action-link';
-  const element = await page.$(selector);
-  const text = await element.textContent();
+  
+  const browser = await playwright.firefox.launch()
+  const page = await browser.newPage()
+  await page.goto('https://www.google.com')
+  await page.screenshot({path: 'x.png'})
 
-  console.log('Texto del elemento: ', text);
-  
-  await browser.close();
-})();
+  await browser.close()
+}
+)
