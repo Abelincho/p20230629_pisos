@@ -35,8 +35,13 @@ async function run() {
     //EL PROGRAMA FALLA EN QUE ESTO.. NO TIENE NASSS
     //NECESITO CREAR UN OBJETO QUE GUARDE Todos los productos. 
     // https://playwright.dev/docs/api/class-locator#locator-evaluate-all
-    const productElements = await page.$$(productSelector);
+    
+    const locator = page.locator(productSelector);
+    var productElements = [];
+    productElements = await locator.evaluateAll()
+    
     console.log(productElements);
+
     // Array para almacenar los productos
     const products = [];
 
